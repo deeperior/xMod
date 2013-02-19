@@ -1,0 +1,69 @@
+name: xMod
+version: 0.9
+description: The ultimate Civilization Forum Plugin
+
+author: xasz
+authors: [BlackJoker, Paranoid]
+website: http://civforum.de/forumdisplay.php?f=405
+
+main: me.xasz.xMod.xMod
+
+commands:
+  xConfig:
+    description: Let's you interact with the configuration.
+    permission: xMod.config
+    usage: |
+      /<command> [save, reload]
+      Example: /<command> save - saves the actual config to disk
+      Example: /<command> reload - reloads the config from disk
+  xstats:
+    description: Displays the Stats of the Player
+    usage: /<command>
+  xtop:
+    description: Displays the Stats of the Player
+    usage: /<command>
+
+permissions:
+  xMod.*:
+    description: Gives access to all.
+    children:
+      xMod.config.*: true
+      xMod.skill.*: true
+  xMod.config.*:
+    description: Gives access to all config commands.
+    children:
+      xMod.config.save: true
+      xMod.config.reload: true
+  xMod.config.save:
+    description: Allows you to save the actual configuration to disk.
+    default: op
+  xMod.config.reload:
+    description: Allows you to reload the configuration from disk.
+    default: op
+  xMod.skill.*:
+    description: Give access to all skills.
+    children:
+      xMod.skill.axe: true
+      xMod.skill.bow: true
+      xMod.skill.combatSkill: true
+      xMod.skill.pickaxe: true
+      xMod.skill.repair: true
+      xMod.skill.shear: true
+      xMod.skill.shovel: true
+      xMod.skill.sword: true
+  xMod.skill.axe:
+    description: Allows you to use the axe skill.
+    default: true
+  xMod.skill.pickaxe:
+    description: Allows you to use the pickaxe skill.
+    default: true
+  xMod.skill.repair:
+    description: Allows you to use the repair skill.
+    default: true
+  xMod.skill.shear:
+    description: Allows you to use the shear skill.
+    default: true
+  xMod.skill.shovel:
+    description: Allows you to use the shovel skill.
+    default: true
+

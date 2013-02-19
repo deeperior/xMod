@@ -1,0 +1,103 @@
+skills:
+    pickaxe:
+        maxlevel: 100
+        tick: 1
+        enabled: true
+        DoubleDropFactor: 0.33
+        factors:
+            A: 140
+            B: 2500
+            C: 0
+        MaxDoubleDropChance: 30.0
+        DoubleDropPerLevelFactor: 1.0
+        tickmultiplier:
+            Coal: 5.0
+            Obsidian: 10.0
+            Iron: 10.0
+            Gold: 15.0
+            Lapis: 15.0
+            Diamond: 30.0
+            Glowstone: 10.0
+            Netherbrick: 5.0
+            Netherrack: 0.5
+            Sandstone: 1.5
+            Redstone: 1.5
+    shovel:
+        maxlevel: 100
+        tick: 1
+        enabled: true
+        factors:
+            A: 140
+            B: 2500
+            C: 0
+        MaxDoubleDropChance: 30.0
+        DoubleDropPerLevelFactor: 0.33
+        tickmultiplier:
+            Clay: 15.0
+    hoe:
+        maxlevel: 100
+        tick: 1
+        enabled: true
+        factors:
+            A: 140
+            B: 2500
+            C: 0
+        MaxDoubleDropChance: 30.0 
+        DoubleDropPerLevelFactor: 0.33
+        tickmultiplier:
+            Wheat: 5.0
+            Melon: 10.0
+            Pumpkin: 15.0
+    shear:
+        maxlevel: 100
+        tick: 5
+        sheeptick: 25
+        enabled: true
+        factors:
+            A: 140
+            B: 2500
+            C: 0
+        MaxInstantSheepGrowChance: 30.0
+        MaxDoubleDropChance: 30.0
+        InstantGrowChancePerLevelFactor: 1.0
+        levelmultiplicator: 2.0
+        MaxBlockChance: 30.0
+        DoubleDropPerLevelFactor: 0.33
+    repair:
+        maxlevel: 100
+        tick: 1
+        enabled: true
+        factors:
+            A: 140
+            B: 2500
+            C: 0
+        MaxProcChance: 30.0
+        ChancePerLevelFactor: 0.33
+    axe:
+        maxlevel: 100
+        tick: 1
+        enabled: true
+        factors:
+            A: 140
+            B: 2500
+            C: 0
+        MaxDoubleDropChance: 30.0
+        MaxCritChance: 30.0
+        CriticalHitMultiplicator: 1.0
+        DoubleDropPerLevelFactor: 0.33
+        CriticalChancePerLevel: 1.0
+general:
+    crafting:
+        MossyBrickStoneRecipe: True
+        CrackeyBrickStoneRecipe: True
+        MossyCobbleStone: True
+        RecipeLeather: True
+        IceRecipe: True
+        RecipeChisledStone: True
+    debugmodus: false
+mysql:
+    username: lol
+    password: lol
+    db: lol
+    port: lol
+    server: lol
