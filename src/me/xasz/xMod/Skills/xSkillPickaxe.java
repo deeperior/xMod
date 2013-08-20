@@ -69,9 +69,12 @@ public class xSkillPickaxe extends xSkillFarmingSkill{
 						xBlock.dropNaturallyItem(Material.COBBLESTONE, block);						
 					}
 				break;
+				case QUARTZ_ORE:
+					xBlock.dropNaturallyItem(Material.QUARTZ, block);
+				break;	
 				case COAL_ORE:
 					xBlock.dropNaturallyItem(Material.COAL, block);
-				break;				
+				break;			
 				case LAPIS_ORE:
 					ItemStack item = new ItemStack(Material.getMaterial(351), 1, (byte)0,(byte)0x4);
 					xBlock.dropNaturallyItem(item, block);
@@ -105,6 +108,7 @@ public class xSkillPickaxe extends xSkillFarmingSkill{
 		  case COAL_ORE:      xp *= xMod.pickaxeCoalTickMultiplier;    break;
 		  case OBSIDIAN:      xp *= xMod.pickaxeObsidianTickMultiplier;    break;
 		  case IRON_ORE:      xp *= xMod.pickaxeIronTickMultiplier;    break;
+		  case QUARTZ_ORE:     xp *= xMod.pickaxeQuartzTickMultiplier;    break;
 		  case GOLD_ORE:      xp *= xMod.pickaxeGoldTickMultiplier;    break;
 		  case LAPIS_ORE:     xp *= xMod.pickaxeLapisTickMultiplier;    break;
 		  case DIAMOND_ORE:   xp *= xMod.pickaxeDiamondTickMultiplier;    break;
@@ -117,7 +121,6 @@ public class xSkillPickaxe extends xSkillFarmingSkill{
 			  break;
 		}
 
-		
 		
 		if(xp < 1){
 			xp = 1;
@@ -147,6 +150,7 @@ public class xSkillPickaxe extends xSkillFarmingSkill{
             m == Material.NETHERRACK ||
         	m == Material.SANDSTONE ||
         	m == Material.REDSTONE_ORE || 
+            m == Material.QUARTZ_ORE ||
         	m == Material.ENDER_STONE
 			)
 	{

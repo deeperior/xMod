@@ -54,6 +54,8 @@ public class xPlayerProfile implements Comparable<xPlayerProfile>
 	private int hoeCurrentLevelMaxXP = 0;
 	private int enchantmentCurrentLevelMaxXP = 0;
 	
+	
+	
 	/**  sets all standard
 	 * @param instance
 	 * @param tplayer
@@ -399,7 +401,7 @@ public class xPlayerProfile implements Comparable<xPlayerProfile>
 						repairLVL++;
 						refreshRepairCurrentLevelMaxXP();
 						xPlayer.sendSuccessMessage(player, skill.toString() + "Level UP - Your new REPAIR-Level is: " + repairLVL );
-						x.Connector.savePlayerProfile(this);
+
 					}
 				}
 			} break;
@@ -414,7 +416,6 @@ public class xPlayerProfile implements Comparable<xPlayerProfile>
 						enchantmentLVL++;
 						refreshRepairCurrentLevelMaxXP();
 						xPlayer.sendSuccessMessage(player, skill.toString() + "Level UP - Your new ENCHANTMENT-Level is: " + enchantmentLVL );
-						x.Connector.savePlayerProfile(this);
 					}
 				}
 			} break;
@@ -429,7 +430,6 @@ public class xPlayerProfile implements Comparable<xPlayerProfile>
 						pickaxeLVL++;
 						refreshPickaxeCurrentLevelMaxXP();
 						xPlayer.sendSuccessMessage(player, skill.toString() + "Level UP - Your new PICKAXE-Level is: " + pickaxeLVL );
-						x.Connector.savePlayerProfile(this);
 					}
 				}
 			} break;
@@ -445,7 +445,6 @@ public class xPlayerProfile implements Comparable<xPlayerProfile>
 						axeLVL++;
 						refreshAxeCurrentLevelMaxXP();
 						xPlayer.sendSuccessMessage(player, skill.toString() + "Level UP - Your new AXE-Level is: " + axeLVL );
-						x.Connector.savePlayerProfile(this);
 					}
 				}
 			} break;
@@ -460,7 +459,6 @@ public class xPlayerProfile implements Comparable<xPlayerProfile>
 						shovelLVL++;
 						refreshShovelCurrentLevelMaxXP();
 						xPlayer.sendSuccessMessage(player, skill.toString() + "Level UP - Your new SHOVEL-Level is: " + shovelLVL );
-						x.Connector.savePlayerProfile(this);
 					}
 				}
 			} break;
@@ -476,7 +474,6 @@ public class xPlayerProfile implements Comparable<xPlayerProfile>
 						shearLVL++;
 						refreshShearCurrentLevelMaxXP();
 						xPlayer.sendSuccessMessage(player, skill.toString() + "Level UP - Your new SHEAR-Level is: " + shearLVL );
-						x.Connector.savePlayerProfile(this);
 					}
 				}
 			} break;
@@ -491,7 +488,6 @@ public class xPlayerProfile implements Comparable<xPlayerProfile>
 						hoeLVL++;
 						refreshHoeCurrentLevelMaxXP();
 						xPlayer.sendSuccessMessage(player, skill.toString() + "Level UP - Your new HOE-Level is: " + hoeLVL );
-						x.Connector.savePlayerProfile(this);
 					}
 				}
 			} break;
@@ -506,7 +502,16 @@ public class xPlayerProfile implements Comparable<xPlayerProfile>
 		{
 			isChanged = true;
 		}
-		x.Connector.savePlayerProfile(this);
+		pseudoSave();
+	}
+	private int saveCounter = 0;
+	private void pseudoSave(){
+		if(saveCounter >= xMod.BlocksToCountUntilPlayerProfileSave){
+			x.Connector.savePlayerProfile(this);
+			saveCounter = 0;
+		}else{
+			saveCounter++;
+		}		
 	}
 	
 	public int compareTo(xPlayerProfile other)

@@ -93,7 +93,10 @@ public class xSkillHoe extends xSkillFarmingSkill {
 		if(  m == Material.LONG_GRASS ||
 			m == Material.CROPS ||
 			m == Material.PUMPKIN ||
-			m == Material.MELON_BLOCK)
+			m == Material.MELON_BLOCK ||
+			m == Material.POTATO ||
+			m == Material.CARROT ||
+			m == Material.NETHER_WARTS)
 			{
 					is = true;
 			}

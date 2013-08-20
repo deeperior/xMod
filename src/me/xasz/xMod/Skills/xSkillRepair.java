@@ -330,7 +330,13 @@ public class xSkillRepair {
 		if(item.getEnchantmentLevel(Enchantment.WATER_WORKER) > 0){
 			overAllEnchantmentLevel += item.getEnchantmentLevel(Enchantment.WATER_WORKER);
 		}
-		
+
+		if(item.getEnchantmentLevel(Enchantment.THORNS) > 0){
+			overAllEnchantmentLevel += item.getEnchantmentLevel(Enchantment.WATER_WORKER);
+		}
+		if(item.getEnchantmentLevel(Enchantment.PROTECTION_FIRE) > 0){
+			overAllEnchantmentLevel += item.getEnchantmentLevel(Enchantment.WATER_WORKER);
+		}
 		
 		
 		//multiply by factor 1.5

@@ -43,6 +43,8 @@ public class xMod extends JavaPlugin{
 	public static boolean RecipeLeather = true;
 	public static boolean RecipeChisledStone = true;
 	
+	public static int BlocksToCountUntilPlayerProfileSave = 20;
+	
 	//static
 	public static final String PluginDir = "plugins"+File.separator+"xMod";
 	
@@ -81,6 +83,7 @@ public class xMod extends JavaPlugin{
 	public static double pickaxeCoalTickMultiplier = 1;
 	public static double pickaxeObsidianTickMultiplier = 1;
 	public static double pickaxeIronTickMultiplier = 1;
+	public static double pickaxeQuartzTickMultiplier = 1;
 	public static double pickaxeGoldTickMultiplier = 1;
 	public static double pickaxeLapisTickMultiplier = 1;
 	public static double pickaxeDiamondTickMultiplier = 1;
@@ -185,7 +188,7 @@ public class xMod extends JavaPlugin{
 	/*
 	 * local class vars
 	 */
-	public xBlockWatcher blockWatcher = new xBlockWatcher(this);
+	public xBlockWatcher blockWatcher = null;
 	public xConnector Connector;
 	private static xPlayerListener playerListener = null;
 	private static xBlockListener blockListener = null;
@@ -220,6 +223,15 @@ public class xMod extends JavaPlugin{
 		blockListener = new xBlockListener(this);
 		
 		playerListener.loadCurrentPlayers();
+		try{
+			blockWatcher = new xBlockWatcher(this);
+		}catch(Exception e){
+			System.out.println("[xMod] Logblock couldn't loaded. Plugin suicide");
+			onDisable();
+			return;
+		}
+		
+		
 		
 		pm = getServer().getPluginManager();
 		

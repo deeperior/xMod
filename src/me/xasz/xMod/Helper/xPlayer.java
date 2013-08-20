@@ -186,7 +186,7 @@ public class xPlayer {
 				destination.sendMessage(ChatColor.WHITE + String.valueOf(rang) + ". " + ChatColor.RED + current.GetPlayerName() + "\t" + ChatColor.YELLOW + current.getShovelLVL());
 			}	
 			rang ++;
-			if(rang >= 10){
+			if(rang > 10){
 				break;
 			}
 		}

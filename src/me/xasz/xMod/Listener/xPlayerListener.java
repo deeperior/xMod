@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Sheep;
 import org.bukkit.event.EventHandler;
@@ -123,11 +122,6 @@ public class xPlayerListener implements Listener {
 	public void onPlayerInteract(PlayerInteractEvent event) {
 		xPlayer.sendDebugMessage(event.getPlayer(), "xPlayerListener:onPlayerInteract() triggered");	
 		
-		if((event.getAction() == Action.RIGHT_CLICK_AIR && event.getPlayer().getItemInHand().getType() == Material.ARROW) || (event.getAction() == Action.RIGHT_CLICK_BLOCK && event.getPlayer().getItemInHand().getType() == Material.ARROW)){
-			xPlayer.sendDebugMessage(event.getPlayer(), "ArrowShoot triggered");	
-			//TODO: Cooldowntimer
-			//xSkillBow.throwArrow(event.getPlayer());
-		}
 		
 		// Is Player hitting on Repairblock
 		if(event.getAction() == Action.RIGHT_CLICK_BLOCK && event.getClickedBlock().getTypeId() == 42){

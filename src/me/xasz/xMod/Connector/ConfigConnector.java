@@ -26,7 +26,9 @@ public class ConfigConnector {
         xMod.RecipeMossyBrick=config.getBoolean("general.crafting.MossyBrickStoneRecipe",xMod.RecipeMossyBrick);
         xMod.RecipeCrackedBrick=config.getBoolean("general.crafting.CrackeyBrickStoneRecipe",xMod.RecipeCrackedBrick);
         xMod.RecipeLeather=config.getBoolean("general.crafting.RecipeLeather",xMod.RecipeLeather);
-        xMod.RecipeChisledStone=config.getBoolean("general.crafting.RecipeChisledStone",xMod.RecipeChisledStone);
+        xMod.RecipeChisledStone=config.getBoolean("general.crafting.RecipeChisledStone",xMod.RecipeChisledStone);	
+        xMod.BlocksToCountUntilPlayerProfileSave=config.getInt("general.BlocksToCountUntilPlayerProfileSave",xMod.BlocksToCountUntilPlayerProfileSave);
+        
         
 		
         
@@ -99,6 +101,9 @@ public class ConfigConnector {
 		xMod.pickaxeNetherrackTickMultiplier = config.getDouble("skills.pickaxe.tickmultiplier.Netherrack",xMod.pickaxeNetherrackTickMultiplier);
 		xMod.pickaxeSandstoneTickMultiplier = config.getDouble("skills.pickaxe.tickmultiplier.Sandstone",xMod.pickaxeSandstoneTickMultiplier);
 		xMod.pickaxeRedStoneTickMultiplier = config.getDouble("skills.pickaxe.tickmultiplier.Redstone",xMod.pickaxeRedStoneTickMultiplier);
+		xMod.pickaxeQuartzTickMultiplier = config.getDouble("skills.pickaxe.tickmultiplier.Quartz",xMod.pickaxeQuartzTickMultiplier);
+		
+		
 		
 		
 		xMod.axeIsEnabled = config.getBoolean("skills.axe.enabled",xMod.axeIsEnabled);
