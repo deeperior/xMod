@@ -83,7 +83,7 @@ public class xPlayerListener implements Listener {
 		{
 			//save to xml
 			xPlayerProfile t = getPlayerProfile(event.getPlayer());
-			//saveOnlinePlayers();
+			saveOnlinePlayers();
 			//x.Connector.savePlayerProfile(t);
 			playerProfiles.remove(t);
 			if(xMod.DEBUG){

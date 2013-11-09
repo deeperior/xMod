@@ -81,4 +81,5 @@ public abstract class xConnector {
 
 
 	public abstract boolean canConnect();
+
 }

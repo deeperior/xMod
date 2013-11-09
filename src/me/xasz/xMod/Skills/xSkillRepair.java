@@ -123,6 +123,7 @@ public class xSkillRepair {
 	 * @return
 	 */
 	private static short getMaxDurability(ItemType neededItemType,int neededItemMaterialID){
+		System.out.println("ItemType:"+neededItemType.toString());
 		short maxItemHealth = 0;
 		//sets the durability of the armor. else there is ne normal durability based on the material
 		if(neededItemType == ItemType.BOW){
@@ -132,6 +133,7 @@ public class xSkillRepair {
 				switch (neededItemMaterialID) {
 				// Iron
 				case 265:
+				case 327:
 					maxItemHealth = 166;
 					break;
 				// Gold
@@ -142,12 +144,17 @@ public class xSkillRepair {
 				case 264:
 					maxItemHealth = 364;
 					break;
+					// Leather
+					case 334:
+						maxItemHealth = 56;
+						break;
 				}						
 			}
 			if(neededItemType == ItemType.CHESTPLATE){
 				switch (neededItemMaterialID) {
 				// Iron
 				case 265:
+				case 327:
 					maxItemHealth = 242;
 					break;
 				// Gold
@@ -158,12 +165,17 @@ public class xSkillRepair {
 				case 264:
 					maxItemHealth = 530;
 					break;
+					// Leather
+					case 334:
+						maxItemHealth = 81;
+						break;
 				}						
 			}
 			if(neededItemType == ItemType.LEGGINGS){
 				switch (neededItemMaterialID) {
 				// Iron
 				case 265:
+				case 327:
 					maxItemHealth = 226;
 					break;
 				// Gold
@@ -174,6 +186,10 @@ public class xSkillRepair {
 				case 264:
 					maxItemHealth = 496;
 					break;
+					// Leather
+					case 334:
+						maxItemHealth = 76;
+						break;
 				}						
 			}
 			if(neededItemType == ItemType.SHEAR){
@@ -183,6 +199,7 @@ public class xSkillRepair {
 				switch (neededItemMaterialID) {
 				// Iron
 				case 265:
+				case 327:
 					maxItemHealth = 196;
 					break;
 				// Gold
@@ -193,6 +210,10 @@ public class xSkillRepair {
 				case 264:
 					maxItemHealth = 430;
 					break;
+					// Leather
+					case 334:
+						maxItemHealth = 66;
+						break;
 				}						
 			}
 		}else{
@@ -462,24 +483,32 @@ public class xSkillRepair {
 		case 306:
 		case 310:
 		case 314:
+		case 298:
+		case 302:
 			result = ItemType.HELMET;
 			break;
 		// CHESTPLATE
 		case 307:
 		case 311:
 		case 315:
+		case 299:
+		case 303:
 			result = ItemType.CHESTPLATE;
 			break;
 		// LEGGINGS
 		case 308:
 		case 312:
 		case 316:
+		case 300:
+		case 304:
 			result = ItemType.LEGGINGS;
 			break;
 		// BOOTS
 		case 309:
 		case 313:
 		case 317:
+		case 301:
+		case 305:
 			result = ItemType.BOOTS;
 			break;
 			// SHEAR
@@ -499,7 +528,7 @@ public class xSkillRepair {
 		;
 		int itemid = item.getTypeId();
 		switch (itemid) {
-		//Stirng
+		//String
 		case 261:// BOW
 			result = 287;
 			break;
@@ -573,6 +602,24 @@ public class xSkillRepair {
 			//Dia
 			result = 264;
 			break;
+		//LEATHER
+		//EQ
+		case 298:	
+		case 299:
+		case 300:
+		case 301:
+			//LEATHER
+			result = 334;
+			break;
+		//CHAIN
+		//EQ
+		case 302:	
+		case 303:
+		case 304:
+		case 305:
+			//LEATHER
+			result = 327;
+			break;
 		}
 		return result;
 	}
@@ -602,6 +649,12 @@ public class xSkillRepair {
 			break;
 		case 287: // Dia
 			result = "String";
+			break;
+		case 334: // Leather
+			result = "Leather";
+			break;
+		case 327: // Lava Bucket
+			result = "Lava Bucket";
 			break;
 		default:
 			result = new ItemStack(id).toString();

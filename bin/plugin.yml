@@ -67,4 +67,3 @@ permissions:
   xMod.skill.shovel:
     description: Allows you to use the shovel skill.
     default: true
-

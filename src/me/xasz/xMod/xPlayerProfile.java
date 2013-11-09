@@ -498,16 +498,15 @@ public class xPlayerProfile implements Comparable<xPlayerProfile>
 			} break;
 		}
 
-		if (skill != xSkillType.NONE)
-		{
-			isChanged = true;
-		}
+		isChanged = true;
+
 		pseudoSave();
 	}
 	private int saveCounter = 0;
 	private void pseudoSave(){
 		if(saveCounter >= xMod.BlocksToCountUntilPlayerProfileSave){
 			x.Connector.savePlayerProfile(this);
+			isChanged = false;
 			saveCounter = 0;
 		}else{
 			saveCounter++;

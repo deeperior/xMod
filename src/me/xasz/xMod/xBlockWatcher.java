@@ -24,7 +24,7 @@ public class xBlockWatcher {
 	
 	public xBlockWatcher(final xMod instance){
 		this.x = instance;
-		logblock = (LogBlock) x.getServer().getPluginManager().getPlugin("LogBlock");
+		//logblock = (LogBlock) x.getServer().getPluginManager().getPlugin("LogBlock");
 	}
 	/** check if the block is a playerplaced block
 	 * @param the block to check
@@ -53,7 +53,6 @@ public class xBlockWatcher {
 		params.needData = true;
 		params.needType = true;
 		params.limit = 1;
-		System.out.println(params.getQuery());
 		try {
 			List<BlockChange> changes = logblock.getBlockChanges(params);
 			System.out.println(changes.size());

@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Logger;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import me.xasz.xMod.xMod;
@@ -112,8 +113,10 @@ public class xMysqlConnector extends xConnector {
 		connect();
 		boolean success = false;
 		ResultSet res;
+		if(xMod.DEBUG)
+			System.out.println(ChatColor.WHITE + "[xMod] " + ChatColor.BLUE +profile.GetPlayerName()+"'s will be saved");
+		
 		try {
-			if(profile.isChanged()){
 				res = selectQuery("SELECT * FROM player WHERE name = '"+profile.GetPlayerName()+"';");
 				//getcount
 				res.last();
@@ -174,7 +177,6 @@ public class xMysqlConnector extends xConnector {
 						}catch(Exception e){}
 					}
 				}
-			}
 
 		} catch (SQLException e) {
 			System.out.println("[xMod] "+ profile.GetPlayerName() + "'s Profile wasn't saved");	
