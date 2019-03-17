@@ -1,5 +1,3 @@
 # do not commit compiled output
 bin
-xMod/target
-
-.project
+target

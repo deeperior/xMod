@@ -6,28 +6,53 @@
 
   <groupId>me.xasz.xMod</groupId>
   <artifactId>xMod</artifactId>
-  <version>0.1</version>
+  <version>0.9</version>
 
   <name>xMod</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>https://www.civforum.de/showthread.php?78539-xMod-It-s-not-McMMO</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
+  <repositories>
+    <repository>
+      <id>spigot-repo</id>
+      <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+    </repository>
+  </repositories>
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
+      <groupId>org.spigotmc</groupId>
+      <artifactId>spigot-api</artifactId>
+      <version>1.12.2-R0.1-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.bukkit</groupId>
+      <artifactId>bukkit</artifactId>
+      <version>1.12.2-R0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>de.diddiz</groupId>
+      <artifactId>logblock</artifactId>
+      <version>1.12.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
   <build>
+    <sourceDirectory>${project.basedir}/src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>${project.basedir}/src</directory>
+        <includes>
+          <include>plugin.yml</include>
+        </includes>
+      </resource>
+    </resources>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
