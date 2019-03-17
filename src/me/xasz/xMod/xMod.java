@@ -3,7 +3,6 @@ package me.xasz.xMod;
 import java.io.File;
 
 
-import org.bukkit.craftbukkit.Main;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginLogger;
@@ -179,6 +178,7 @@ public class xMod extends JavaPlugin{
 	public static final String msgCmdConfigSaveSuccess ="Configuration successfully saved to disk.";
 
 
+	//TODO: make this into the config
 	public static String  mysqlUsername = "user";
 	public static String  mysqlPassword = "password";
 	public static String  mysqlDB = "database";
@@ -196,9 +196,6 @@ public class xMod extends JavaPlugin{
 	
 	private PluginManager pm = null;
 	ConfigConnector config = null;
-	
-	public static Main instance = null;
-
 	
 	@Override
 	public void onEnable() {
